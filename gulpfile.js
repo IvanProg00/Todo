@@ -1,27 +1,30 @@
 const { task, src, dest, series, watch } = require("gulp");
 const rollup = require("gulp-better-rollup");
-const babel = require("rollup-plugin-babel");
+const rollupBabel = require("rollup-plugin-babel");
 const resolve = require("rollup-plugin-node-resolve");
 const commonjs = require("rollup-plugin-commonjs");
+const babel = require("gulp-babel");
 const del = require("del");
 const browserSync = require("browser-sync").create();
 const scss = require("gulp-sass");
-const uglify = require("gulp-uglify");
 
 task("delete", () => {
 	return del("dist/");
 });
 
 task("html", () => {
-	return src("./src/index.html")
-		.pipe(dest("dist/"))
-		.pipe(browserSync.stream());
+	return src("./src/index.html").pipe(dest("dist/")).pipe(browserSync.stream());
 });
 
 task("babel", () => {
 	return src("./src/js/*.js")
-		.pipe(rollup({ plugins: [babel(), resolve(), commonjs()] }, "umd"))
-		.pipe(uglify())
+		.pipe(rollup({ plugins: [rollupBabel(), resolve(), commonjs()] }, "umd"))
+		.pipe(
+			babel({
+				presets: ["@babel/preset-env"],
+				compact: true,
+			})
+		)
 		.pipe(dest("dist/js/"))
 		.pipe(browserSync.stream());
 });
