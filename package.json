@@ -1,0 +1,33 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Todo project",
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanProg00/Todo.git"
+  },
+  "keywords": [
+    "todo"
+  ],
+  "author": "Ivan Gavrilov <gavrilovivan2000@mail.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvanProg00/Todo/issues"
+  },
+  "homepage": "https://github.com/IvanProg00/Todo#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-better-rollup": "^4.0.1",
+    "gulp-cli": "^2.2.1",
+    "rollup": "^2.10.9",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  }
+}
