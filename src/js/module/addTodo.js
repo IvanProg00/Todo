@@ -4,14 +4,14 @@ export default () => {
 	const form = document.forms["addTodo"];
 	const userIn = form.elements["user"];
 	const contentIn = form.elements["content"];
-    const tbody = document.querySelector(".todo tbody");
+	const tbody = document.querySelector(".todo tbody");
 
 	deleteTodo.controlElems();
 
 	form.addEventListener("submit", e => {
 		e.preventDefault();
-        let lastId = document.querySelector(".todo tbody").lastElementChild.firstElementChild.innerText;
-        lastId = +lastId + 1;
+		const todos = document.querySelector(".todo tbody").children;
+		const lastId = todos.length > 0 ? (+todos[todos.length - 1].firstElementChild.innerText + 1) : 1;
 
 		const tbodyBlock = document.createElement("tr");
 
@@ -35,6 +35,6 @@ export default () => {
 		tbodyBlock.appendChild(remove);
 
 		tbody.appendChild(tbodyBlock);
-		deleteTodo.stop();
+		deleteTodo.reload();
 	});
 };

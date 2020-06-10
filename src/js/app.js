@@ -2,9 +2,10 @@ import {renderThead, renderTbody} from "./module/renderTodos";
 import addTodo from "./module/addTodo";
 
 const users = [
-	["Mark", "Content 1"],
-	["John", "Content 2"],
-	["Ivan", "Content 3"],
+	["Caine Tang", "Buy food."],
+	["Kya Farmer", "Wash teeth."],
+	["Kellan Horner", "Play football."],
+	["Amayah Ali", "Play tennis"],
 ];
 
 window.addEventListener("load", start);

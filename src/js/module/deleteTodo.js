@@ -8,9 +8,8 @@ const deleteTodo = {
 	elemsTarget(e) {
 		const tr = e.target.closest("tr");
 		tr.remove();
-		this.stop();
 	},
-	stop() {
+	reload() {
 		this.controlElems();
 	},
 };
