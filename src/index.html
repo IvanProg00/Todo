@@ -11,8 +11,13 @@
 		<header>
 			<h1>Todo</h1>
 		</header>
-		<main class="container">
-			<table class="todo">
+		<main class="container todo">
+			<form name="addTodo" class="form">
+				<input name="user" type="text" placeholder="User" />
+				<textarea name="content" placeholder="Content"></textarea>
+				<button type="submit">Add todo</button>
+			</form>
+			<table>
 				<thead></thead>
 				<tbody></tbody>
 			</table>

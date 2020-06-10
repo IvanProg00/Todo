@@ -2,8 +2,12 @@
 @import "fonts.scss";
 @import "elem.scss";
 
-$headerBg: rgb(54, 54, 54);
+$headerBg: #363636;
 $headerC: #fff;
+
+$formBg: #363636;
+$formC: #fff;
+
 $theadBg: rgb(223, 66, 66);
 $theadC: rgb(255, 255, 255);
 $tbodyBg: rgb(44, 44, 44);
@@ -22,6 +26,44 @@ header {
 	width: 100%;
 	max-width: 800px;
 	margin: 0 auto 40px;
+	.form {
+		margin: 15px auto;
+		input, textarea, button {
+			border-radius: 4px;
+
+		}
+		input, textarea {
+			width: 95%;
+			margin: 0 auto 20px;
+			padding: 6px 8px;
+			display: block;
+			font-size: 14px;
+			border: 2px solid rgb(49, 49, 49);
+			background-color: $formBg;
+			color: $formC;
+		}
+		input {
+			max-width: 400px;
+		}
+		textarea {
+			max-width: 500px;
+			min-height: 50px;
+			height: 80px;
+			max-height: 200px;
+			resize: vertical;
+		}
+		button {
+			border: 0;
+			padding: 6px 12px;
+			margin: 0 auto;
+			display: block;
+			width: 140px;
+			font-size: 18px;
+			color: white;
+			background-color: rgb(9, 138, 212);
+			cursor: pointer;
+		}
+	}
 	table {
 		width: 100%;
 		padding: 10px 4px;
@@ -51,6 +93,7 @@ header {
 				transition-property: background-color, box-shadow;
 				transition-duration: .15s;
 				transition-timing-function: ease-in-out;
+				cursor: pointer;
 				&:hover {
 					background-color: rgb(202, 26, 26);
 				}

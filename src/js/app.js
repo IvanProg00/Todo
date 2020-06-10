@@ -1,4 +1,5 @@
-import renderTasks from "./module/renderTasks";
+import {renderThead, renderTbody} from "./module/renderTodos";
+import addTodo from "./module/addTodo";
 
 const users = [
 	["Mark", "Content 1"],
@@ -6,6 +7,10 @@ const users = [
 	["Ivan", "Content 3"],
 ];
 
-window.addEventListener("load", () => {
-	renderTasks(users);
-});
+window.addEventListener("load", start);
+
+function start() {
+	renderThead();
+	renderTbody(users);
+	addTodo();
+}
