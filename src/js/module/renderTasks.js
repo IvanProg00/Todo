@@ -1,18 +1,13 @@
-export default () => {
-	const thead = document.querySelector("thead");
-	const tbody = document.querySelector("tbody");
+export default (tbodyModel) => {
+	const thead = document.querySelector(".todo thead");
+	const tbody = document.querySelector(".todo tbody");
 
 	const theadModel = ["#", "User", "Content", "Remove"];
-	const tbodyModel = [
-		["Mark", "Content 1"],
-		["John", "Content 2"],
-	];
 
 	function renderThead() {
 		const theadBlock = document.createElement("tr");
 		theadModel.forEach(item => {
-			const title = document.createElement("th");
-			title.setAttribute("scope", "col");
+			const title = document.createElement("td");
 			title.innerHTML = item;
 			theadBlock.appendChild(title);
 		});
@@ -31,7 +26,7 @@ export default () => {
             const btn = document.createElement("button");
             const remove = document.createElement("td");
 
-            btn.classList.add("btn", "btn-danger");
+            btn.classList.add("delete");
 
             idx.textContent = id++;
             user.textContent = item[0];

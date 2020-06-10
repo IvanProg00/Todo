@@ -1,7 +1,63 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "reset.scss";
+@import "fonts.scss";
+@import "elem.scss";
 
+$headerBg: rgb(54, 54, 54);
+$headerC: #fff;
+$theadBg: rgb(223, 66, 66);
+$theadC: rgb(255, 255, 255);
+$tbodyBg: rgb(44, 44, 44);
+$tbodyC: #fff;
+
+body {
+	font-family: Roboto, sans-serif;
+}
 header {
-	background-color: rgb(54, 54, 54);
-	color: white;
+	background-color: $headerBg;
+	color: $headerC;
 	padding: 20px 0 10px;
+	text-align: center;
+}
+.container {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto 40px;
+	table {
+		width: 100%;
+		padding: 10px 4px;
+		thead {
+			background-color: $theadBg;
+			color: $theadC;
+			text-align: center;
+			td {
+				padding: 20px 0;
+			}
+		}
+		tbody {
+			background-color: $tbodyBg;
+			color: $tbodyC;
+			text-align: center;
+			td {
+				padding: 8px 0;
+			}
+			button.delete {
+				box-sizing: content-box;
+				background-color: rgb(240, 80, 80);
+				color: white;
+				border: 0;
+				font-size: 16px;
+				padding: 3px 8px;
+				border-radius: 3px;
+				transition-property: background-color, box-shadow;
+				transition-duration: .15s;
+				transition-timing-function: ease-in-out;
+				&:hover {
+					background-color: rgb(202, 26, 26);
+				}
+				&:focus {
+					box-shadow: 0 0 0 3px rgba(211, 57, 57, 0.8);
+				}
+			}
+		}
+	}
 }

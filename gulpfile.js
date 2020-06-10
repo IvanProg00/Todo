@@ -29,8 +29,12 @@ task("babel", () => {
 		.pipe(browserSync.stream());
 });
 
+task("fonts", () => {
+	return src("./src/fonts/**/*.{ttf,woff}").pipe(dest("dist/fonts/"));
+});
+
 task("scss", () => {
-	return src("./src/scss/**/*.scss")
+	return src("./src/scss/style.scss")
 		.pipe(
 			scss({
 				outputStyle: "compressed",
@@ -43,7 +47,7 @@ task("scss", () => {
 task("server", () => {
 	browserSync.init({
 		server: {
-			baseDir: "./dist",
+			baseDir: "dist/",
 		},
 		open: true,
 	});
@@ -52,4 +56,4 @@ task("server", () => {
 	watch("./src/scss/**/*.scss", series("scss"));
 });
 
-task("default", series("delete", "html", "babel", "scss", "server"));
+task("default", series("delete", "html", "babel", "fonts", "scss", "server"));

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Todo project",
   "scripts": {
-    "gulp": "gulp"
+    "dev": "gulp default"
   },
   "repository": {
     "type": "git",
@@ -33,7 +33,5 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0"
   },
-  "dependencies": {
-    "bootstrap": "^4.5.0"
-  }
+  "dependencies": {}
 }
