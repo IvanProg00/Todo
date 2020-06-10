@@ -9,10 +9,10 @@ export default () => {
 	deleteTodo.controlElems();
 
 	form.addEventListener("submit", e => {
+		e.preventDefault();
         let lastId = document.querySelector(".todo tbody").lastElementChild.firstElementChild.innerText;
         lastId = +lastId + 1;
 
-		e.preventDefault();
 		const tbodyBlock = document.createElement("tr");
 
 		const idx = document.createElement("td");
